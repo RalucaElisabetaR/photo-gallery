@@ -1,130 +1,124 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;900&display=swap");
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+
+*{
+	margin:0;
+	padding:0;
+	font-family: sans-serif;
 }
-html {
-  font-family: "Montserrat", sans-serif;
-  font-size: 100%;
+.main{
+	position: relative;
+	height: 100%;
+	width: 100%;
 }
-body {
-  background-color: #dbe2e9;
+.main h1{
+	position: relative;
+	height: auto;
+	width: 550px;
+	left: 50%;
+	transform: translateX(-50%);
+	margin:5% 0 2% 0;
+	text-align: center;
+	font-size: 2.8em;
+	font-weight: 650;
+	letter-spacing: 1.5px;
+	color:#656565;
+
+
 }
-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.main p{
+	position: relative;
+	height: auto;
+	width: 100%;
+	text-align: center;
+	font-weight: 500;
+	font-size: 1.5em;
+	letter-spacing: 1px;
+	color: #777;
 }
-section {
-  min-height: 100vh;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 100px 0;
+.main .gallery{
+	position: relative;
+	height: auto;
+	width: 90%;
+	margin: auto;
+	padding: 45px 0;
+	display: grid;
+	grid-template-columns: auto auto auto auto; /*i write auto four time because we want four rows*/
+	grid-gap: 2vh;
+	grid-auto-flow: dense;
 }
-.container {
-  background-color: white;
-  width: 90%;
-  max-width: 900px;
-  margin: 0 auto;
-  box-shadow: 0px 0px 61px 7px #5e849c40;
-  padding: 50px 20px;
-  border-radius: 20px;
+.main .gallery .img{
+	position: relative;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.9 );
+	border-radius: 2px;
 }
-.header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.main .gallery .img:first-child{
+	grid-column-start: span 2;
+	grid-row-start: span 2;
 }
-.header h1 {
-  font-size: 40px;
-  font-weight: 900;
-  letter-spacing: -2px;
+.main .gallery .img:nth-child(2n+3){
+  grid-column-start: span 2;
+	grid-row-start: span 2;
 }
-form {
-  margin-top: 30px;
-  width: 80%;
-  max-width: 300px;
-  position: relative;
+.main .gallery .img:nth-child(4n+5){
+	grid-column-start: span 2;
+	grid-row-start: span 2;
 }
-input {
-  border: none;
-  border-bottom: 2px solid rgba(128, 128, 128, 0.479);
-  font-size: 20px;
-  width: 100%;
-  outline: none;
-  color: gray;
-  background-color: transparent;
+.main .gallery .img:nth-child(6n+7){
+  grid-column-start: span 1;
+	grid-row-start: span 1;
+
+  
 }
-input::placeholder {
-  opacity: 0.5;
-  color: gray;
-  font-family: "Montserrat";
+.main .gallery .img:nth-child(8n+9){
+	grid-column-start: span 2;
+	grid-row-start: span 2;
 }
-form ion-icon {
-  position: absolute;
-  right: 0;
-  font-size: 20px;
-  opacity: 0.5;
-  color: gray;
+.main .gallery .img img{
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+	/* filter: brightness(0.5) grayscale(100); */
+	border-radius: 2px;
+	transition: 0.3s ease-in-out;
 }
-.gallery {
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  margin-top: 50px;
-  grid-gap: 20px;
-}
-.item {
-  width: 100%;
-  height: 300px;
-  position: relative;
-  overflow: hidden;
-  border-radius: 8px;
-  transition: 0.3s ease box-shadow;
+.main .gallery .img:hover img{
+	filter: brightness(1) grayscale(0);
 }
 
-.item:hover {
-  box-shadow: 0px 0px 20px 3px #00000042;
+@media only screen and (max-width: 768px){
+	.main h1{
+		font-size: 1.8em;
+		width: 400px;
+	}
+	.main p{
+		font-size: 1.2em;
+	}
+	.main .gallery{
+		display: grid;
+		grid-template-columns: auto auto auto;
+	}
 }
-.item:nth-last-child(1) {
-  margin-bottom: 0;
+@media only screen and (max-width: 430px){
+	.main h1{
+		font-size: 1.2em;
+		width: 300px;
+	}
+	.main p{
+		font-size: 0.89em;
+	}
+	.main .gallery{
+		display: block;
+	}
+	.main .gallery .img{
+		display: block;
+		width: 100%;
+		height: 100%;
+		margin:2% 0;
+	}
+	.main .gallery .img img{
+		display: block;
+		filter: brightness(1) grayscale(0);
+	}
 }
-.item h3 {
-  width: 100%;
-  padding: 20px;
-  position: absolute;
-  background-color: #00000040;
-  color: aliceblue;
-  bottom: -70px;
-  font-weight: 300;
-  transition: 0.5s ease-in-out bottom;
-}
-.item:hover h3 {
-  bottom: 0;
-}
-@media only screen and (min-width: 900px) {
-  .container {
-    max-width: 1160px;
-    padding: 100px;
-  }
-  .header {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  .header h1 {
-    font-size: 50px;
-  }
-  .header input {
-    font-size: 24px;
-  }
-  .header ion-icon {
-    font-size: 24px;
-  }
-  .gallery {
-    grid-gap: 30px;
-  }
-}
-
