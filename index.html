@@ -2,42 +2,62 @@
 <html lang="en">
 
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>responsive masonry portfolio using grid</title>
-    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo gallery UI</title>
+    <link rel="stylesheet" href="./style.css">
   </head>
 
   <body>
-    <div class="main">
-      <h1>Romanian Beauty </h1>
-      <p>By Raluca Elisabeta Rusu</p>
-      <div class="gallery">
-
-        <div class="img">
-          <img src="images/photo1.jpg" />
+    <section>
+      <div class="container">
+        <div class="header">
+          <h1 class="logo">Romanian Beauty</h1>
+          <form>
+            <input type="text" placeholder="Search">
+            <ion-icon name="search-outline"></ion-icon>
+          </form>
         </div>
-        <div class="img">
-          <img src="images/photo10.jpg" />
+        <div class="gallery">
+          <div class="item">
+            <a href="#">
+              <img src="images/photo1.jpg" alt="image">
+              <h3>© 2021 Elisabeta Rusu</h3>
+            </a>
+          </div>
+          <div class="item">
+            <a href="#">
+              <img src="images/photo10.jpg" alt="image">
+              <h3>© 2021 Elisabeta Rusu</h3>
+            </a>
+          </div>
+          <div class="item">
+            <a href="#">
+              <img src="images/photo2.jpg" alt="image">
+              <h3>© 2021 Elisabeta Rusu</h3>
+            </a>
+          </div>
+          <div class="item">
+            <a href="#">
+              <img src="images/photo3.jpg" alt="image">
+              <h3>© 2021 Elisabeta Rusu</h3>
+            </a>
+          </div>
+          <div class="item">
+            <a href="#">
+              <img src="images/photo4.jpg" alt="image">
+              <h3>© 2021 Elisabeta Rusu</h3>
+            </a>
+          </div>
+          <div class="item">
+            <a href="#">
+              <img src="images/photo7.jpg" alt="image">
+              <h3>© 2021 Elisabeta Rusu</h3>
+            </a>
+          </div>
         </div>
-        <div class="img">
-          <img src="images/photo2.jpg" />
-        </div>
-        <div class="img">
-          <img src="images/photo4.jpg" />
-        </div>
-        <div class="img">
-          <img src="images/photo3.jpg" />
-        </div>
-        <div class="img">
-          <img src="images/photo7.jpg" />
-        </div>
-        <div class="img">
-          <img src="images/photo8.jpg" />
-        </div>
-
       </div>
-    </div>
+    </section>
   </body>
 
 </html>
